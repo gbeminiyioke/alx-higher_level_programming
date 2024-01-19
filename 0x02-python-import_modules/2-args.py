@@ -11,4 +11,4 @@ if __name__ == "__main__":
         print("{} arguments:".format(l_size))
     else:
         print("{} arguments:".format(l_size))
-        print("{} {}".format(l_size, arg[1]))
+        print("{}: {}".format(l_size, arg[1]))
