@@ -8,7 +8,7 @@ if __name__ == "__main__":
         for x in range(1, l_size + 1):
             print("{}: {}".format(x, arg[x]))
     elif l_size == 0:
-        print("{} arguments:".format(l_size))
+        print("{} arguments.".format(l_size))
     else:
-        print("{} arguments:".format(l_size))
+        print("{} argument:".format(l_size))
         print("{}: {}".format(l_size, arg[1]))
