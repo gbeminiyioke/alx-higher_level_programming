@@ -37,7 +37,7 @@ listint_t *rev_listint(listint_t **head)
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *new;
+	listint_t *nw;
 	listint_t *rvs;
 	listint_t *mid;
 	size_t itm;
@@ -45,31 +45,27 @@ int is_palindrome(listint_t **head)
 
 	if (*head == NULL || (*head)->next == NULL)
 		return (1);
-
-	new = *head;
-	while (new)
+	nw = *head;
+	while (nw)
 	{
 		itm_sz++;
-		new = new->next;
+		nw = nw->next;
 	}
-
-	new = *head;
+	nw = *head;
 	for (itm = 0; itm < (itm_sz / 2) - 1; itm++)
-		new = new->next;
-
-	if ((itm_sz % 2) == 0 && new->n != new->next->n)
+		nw = new->next;
+	if ((itm_sz % 2) == 0 && nw->n != nw->next->n)
 		return (0);
-
-	new = new->next->next;
-	rvs = rev_listint(&new);
+	nw = nw->next->next;
+	rvs = rev_listint(&nw);
 	mid = rvs;
 
-	new = *head;
+	nw = *head;
 	while (rvs)
 	{
-		if (new->n != rvs->n)
+		if (nw->n != rvs->n)
 			return (0);
-		new = new->next;
+		nw = nw->next;
 		rvs = rvs->next;
 	}
 	rev_listint(&mid);
